@@ -1,0 +1,14 @@
+# Dependencias y archivos generados por npm/yarn
+node_modules/
+package-lock.json
+yarn.lock
+
+# Archivos de registros
+logs/
+*.log
+
+# Archivos de configuración locales
+config/local.js
+
+# Archivos de datos generados localmente
+db/data/
