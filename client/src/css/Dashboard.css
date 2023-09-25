@@ -1,35 +1,82 @@
-.content-dashboard{
+.content-dashboard {
     display: flex;
 }
-.panel{
+
+.panel {
     width: 20%;
     height: 100vh;
-    background-color: rgb(238, 227, 227);
+    background-color: rgb(252, 97, 7);
+    position: relative;
 }
-.control{
+.panel button{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border: none;
+    background: none;
+    background-color: black;
+    color: white;
+    padding: 8px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: .8rem;
+    transition: transform .1s ease;
+    font-weight: 600;
+}
+.panel button:hover{
+    transform: scale(1.05);
+}
+.control {
     width: 80%;
-   
-    background-color: green;
+
 }
-.panel-links{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-.panel-links * {
+.panel-content span {
+    background-color: rgb(228, 85, 2);
+    color: black;
     display: block;
+    width: 100%;
+    padding: 10px 20px;
+    font-style: italic;
 }
-.content-img-profile{
+.content-img-profile {
     width: 150px;
     height: 150px;
     display: block;
-    margin: 50px auto;
-
+    margin: 50px auto 0 auto;
+    text-align: center;
 }
-.content-img-profile img{
+
+.content-img-profile img {
     width: 100%;
     height: 100%;
     display: block;
     border-radius: 50%;
 }
 
+.links-account {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.links-account a{
+    display: block;
+    text-align: center;
+    color: black;
+    
+}
+.links-dashboard{
+    margin-top: 20px;
+}
+.links-dashboard a{
+    border-bottom: 1px solid rgb(228, 85, 2);
+    display: block;
+    padding: 10px 20px;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: .9rem;
+}
+.links-dashboard a:hover{
+    background-color: rgb(228, 85, 2);
+}

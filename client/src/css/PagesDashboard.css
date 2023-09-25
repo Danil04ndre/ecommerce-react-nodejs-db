@@ -1,0 +1,38 @@
+form {
+    max-width: 600px;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px;
+}
+
+.edit-img {
+    grid-column: span 2;
+    margin: 0 auto;
+}
+
+.edit-img input {
+    display: none;
+}
+
+.edit-img label {
+    background-color: rgb(4, 95, 156);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: .8rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    width: max-content;
+    cursor: pointer;
+
+}
+.edit-img i {
+   margin-right: 6px;
+}
+.end{
+    justify-self: end; 
+}

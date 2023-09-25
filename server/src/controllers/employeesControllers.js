@@ -1,6 +1,7 @@
 import { conn } from "../db.js";
 import bcrypt from "bcrypt";
 
+
 export const register = async (req, res) => {
   try {
     const { nombre, email, contrasena, option } = req.body;
@@ -94,6 +95,12 @@ export const login = async (req, res) => {
       res.json({ msgEmail: "Email no existente." });
     }
   } catch (err) {
-    console.log(err);
+    return res.status(500).json({ msg: "Error en el servidor" });
   }
 };
+
+
+export const editProfileEmployee = async (req,res) => {
+  console.log(req.params.id);
+  console.log(req.body);
+}

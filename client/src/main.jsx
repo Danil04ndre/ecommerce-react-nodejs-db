@@ -4,12 +4,15 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import { FormProvider } from "./context/FormContext.jsx";
 import "./index.css";
+import { DashboardProvide } from "./context/DashboardContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <FormProvider>
+        <DashboardProvide>
         <App />
+        </DashboardProvide>
       </FormProvider>
     </BrowserRouter>
   </React.StrictMode>

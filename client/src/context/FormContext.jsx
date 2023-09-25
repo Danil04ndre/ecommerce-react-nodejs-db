@@ -143,7 +143,7 @@ const FormProvider = ({ children }) => {
       localStorage.setItem("id",json.idEmpleado);
       localStorage.setItem("email",json.email);
       localStorage.setItem("name",json.name);
-      setFormRegister(initialFormLogin);
+      setFormLogin(initialFormLogin);
       setIsAuthEmployee(true);
       goTo("/dashboard");
     }
@@ -179,8 +179,21 @@ const FormProvider = ({ children }) => {
       setEmailNotFound(null);
       setFalsePassword(null);
     }
+    if (!res.ok) {
+      throw { status: res.status, statusText: res.statusText };
+    }
    } catch (err) {
-    console.log(err)
+    Swal.fire({
+      position: "top-end",
+      icon: "error",
+      title: `Error: ${err.status} ${err.statusText}`,
+      showConfirmButton: false,
+      timer: 1500,
+      customClass: {
+        icon: "swal-icon-err",
+        title: "swal-title",
+      },
+    });
    }
 
   }
