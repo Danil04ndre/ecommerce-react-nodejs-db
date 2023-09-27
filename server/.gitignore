@@ -1,6 +1,5 @@
 # Dependencias y archivos generados por npm/yarn
 node_modules/
-package-lock.json
 yarn.lock
 
 # Archivos de registros

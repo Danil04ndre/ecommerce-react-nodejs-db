@@ -1,38 +1,168 @@
-form {
-    max-width: 600px;
-    display: grid;
-    margin: 0 auto;
-    grid-template-columns: 1fr 1fr;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 20px;
-}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
+/* ESTILOS MY-ACCOUNT */
+.form-my-account {
+    max-width: 620px;
+    display: grid;
+    margin: 20px auto;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    column-gap: 20px;
+}
+.form-my-account h2 {
+    font-family: 'Montserrat', sans-serif;
+}
+.form-my-account .edit{
+    margin-bottom: 20px;
+}
+.form-my-account div input {
+    outline: none;
+    padding: 7px 15px;
+    font-size: .89rem;
+    border: 1px solid rgb(196, 196, 196);
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+}
+.form-my-account div label {
+    font-size: .97rem;
+    margin-bottom: 3px;
+    display: inline-block;
+}
+.form-my-account input[type="submit"]{
+    grid-column: span 2;
+    width: max-content;
+    margin: 0 auto;
+    background-color: rgb(25, 135, 84);
+    border: none;
+    padding: 4px 10px 5px 10px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    transition: background-color .1s ease, transform .1s ease;
+}
+.form-my-account input[type="submit"]:hover {
+    background-color: rgb(23, 110, 69);
+    transform: scale(1.03);
+
+}
 .edit-img {
     grid-column: span 2;
     margin: 0 auto;
+    width: 200px;
+    height: 190px;
+    margin-bottom: 80px;
 }
-
+.edit-img img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
 .edit-img input {
     display: none;
 }
 
 .edit-img label {
-    background-color: rgb(4, 95, 156);
+    background-color: rgb(4, 108, 177);
     color: white;
-    font-weight: 600;
     text-transform: uppercase;
-    font-size: .8rem;
-    padding: 5px 10px;
+    font-size: .9rem !important;
+    padding: 2px 9px 1px 9px;
     border-radius: 5px;
     display: block;
-    margin: 0 auto;
     width: max-content;
     cursor: pointer;
+    display: block !important;
+    margin: 10px auto 0 auto;
+    transition: background-color .1s ease;
+
+}
+.edit-img label:hover{
+    background-color: rgb(2, 92, 151);
 
 }
 .edit-img i {
    margin-right: 6px;
 }
-.end{
-    justify-self: end; 
+.added-products{
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 20px;
+}
+
+
+/* ESTILOS ADD-PRODUCT */
+
+.form-add-product{
+    max-width: 500px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    margin: 20px auto;
+    padding: 25px 30px;
+    
+}
+.form-add-product div{
+    width: 100%;
+    margin: 10px 0;
+}
+.form-add-product div label{
+    font-size: .97rem;
+}
+
+.form-add-product input,textarea{
+    width: 100%;
+    padding: 7px 15px;
+    outline: none;
+    font-size: .89rem;
+    border: 1px solid rgb(196, 196, 196);
+    font-family: 'Montserrat', sans-serif;
+}
+.form-add-product textarea {
+    resize: none;
+}
+.form-add-product .img-product {
+    background-color: rgb(4, 108, 177);
+    cursor: pointer;
+    color: white;
+    padding: 2px 9px 3px 9px;
+    border-radius: 5px;
+    font-size: .9rem !important;
+    display: block;
+    margin: 0 auto;
+    width: max-content;
+    text-align: center;
+    transition: background-color .1s ease;
+}
+.form-add-product .img-product:hover {
+    background-color: rgb(2, 92, 151);
+}
+.form-add-product .img-product i {
+   margin-right: 6px;
+}
+.form-add-product input[type="file"]{
+    display: none;
+}
+.content-img-product{
+    border: 1px solid rgb(196, 196, 196);
+    width: 100%;
+    height: 190px;
+}
+.form-add-product input[type="submit"]{
+
+    margin-top: 10px;
+    background-color: rgb(25, 135, 84);
+    border: none;
+    padding: 6px 10px 7px 10px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    transition: background-color .1s ease;
+}
+.form-add-product input[type="submit"]:hover {
+    background-color: rgb(23, 110, 69);
 }

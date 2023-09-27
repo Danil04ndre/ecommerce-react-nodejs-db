@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, Route, Routes, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FormContext from "../context/FormContext";
 import "../css/Dashboard.css";
 import profileDefault from "../assets/user-default.png";
@@ -13,19 +13,22 @@ const Dashboard = () => {
     localStorage.removeItem("id");
     localStorage.removeItem("email");
     localStorage.removeItem("name");
+    localStorage.removeItem("image");
+    localStorage.removeItem("direction");
+    localStorage.removeItem("telefone");
+
     setIsAuthEmployee(false);
     // Redirigir al usuario a la pagina de inicio
     goTo("/");
   };
 
-  const h = useParams();
-  console.log(h)
+ 
   return (
     <div className="content-dashboard">
       <div className="panel">
         <div className="panel-content">
           <div className="content-img-profile">
-            <img src={profileDefault} alt="" />
+            <img src={localStorage.getItem('image') === 'imgDefault' ? profileDefault : `data:image/png;base64,${localStorage.image}`} alt="" />
           </div>
           <div className="links-account">
             <Link to="/dashboard/mi-cuenta">{localStorage.name}</Link>

@@ -128,7 +128,6 @@ const FormProvider = ({ children }) => {
     const json = await res.json();
     console.log(res);
     console.log(json);
-   
     if(json.accountEmployee){
       await Swal.fire({
         icon: 'success',
@@ -143,6 +142,8 @@ const FormProvider = ({ children }) => {
       localStorage.setItem("id",json.idEmpleado);
       localStorage.setItem("email",json.email);
       localStorage.setItem("name",json.name);
+      localStorage.setItem("image",json.image);
+
       setFormLogin(initialFormLogin);
       setIsAuthEmployee(true);
       goTo("/dashboard");

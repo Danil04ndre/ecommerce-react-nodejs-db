@@ -1,29 +1,31 @@
 import { createContext, useState } from "react";
-
-
-
-
-
+import Swal from "sweetalert2";
 
 const DashboardContext = createContext()
 const initialFormEditProfile = {
-  nombre: "",
-  email: "",
-  telefono: "",
-  direccion: "",
+  nombre: localStorage.name || "",
+  email: localStorage.email || "",
+  telefono: localStorage.telefone || "",
+  direccion: localStorage.direction || "",
   file: ""
 }
+console.log(localStorage.imageBuffer)
+
 const DashboardProvide = ({ children }) => {
-
   const [formEditProfile, setFormEditProfile] = useState(initialFormEditProfile);
+  const [profilePreview, setProfilePreview] = useState(null);
+  
+  //myaccount
 
-
-  const handleEditImagenProfile = (e) => {
+  const handleEditImageProfile = (e) => {
     console.log(e.target.files[0]);
     setFormEditProfile({
       ...formEditProfile,
       [e.target.name]: e.target.files[0],
     })
+
+   const imageURL = URL.createObjectURL(e.target.files[0]);
+   setProfilePreview(imageURL);
   }
   const handleFormEditProfile = (e) => {
     setFormEditProfile({
@@ -32,34 +34,85 @@ const DashboardProvide = ({ children }) => {
     })
   }
 
-  const formData = new FormData();
-  formData.append("nombre",formEditProfile.nombre);
-  formData.append("email",formEditProfile.email);
-  formData.append("telefono",formEditProfile.telefono);
-  formData.append("direccion",formEditProfile.direccion);
-  formData.append("imagen",formEditProfile.file);
-  console.log(localStorage.id)
+  //Dato raro, he intentado muchas veces mandar los datos, sin el file (imagen)
+  //y no lo puedo ver los datos enviados por la consola del node, pero si agrego la imagen
+  // ahi recien se puede, en conlucion: si quiero mandar datos con imagen utilizo formData
+  //si quiero mandar datos de solo texto utilizo JSON
   const handleSubmitEditProfile  = async (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append("nombre",formEditProfile.nombre);
+    formData.append("email",formEditProfile.email);
+    formData.append("telefono",formEditProfile.telefono);
+    formData.append("direccion",formEditProfile.direccion);
+    formData.append("file",formEditProfile.file);
     try {
       const res = await fetch(`http://localhost:7000/api/updateProfile/${localStorage.id}`,{
         method: "PUT",
-        headers: {
-          'content-type': 'application/json'
-        },
         body: formData
       });
-      console.log(res)
+      console.log(res);
+      const json = await res.json();
+      console.log(json);
+      console.log(json.msgUpdateOk);
+      if(json.msgFile){
+        await Swal.fire({
+          icon: 'warning',
+          showConfirmButton: false,
+          text: `${json.msgFile}`,
+          timer: 2800,
+          customClass: {
+            icon: "swal-icon-war",
+            title: "swal-title",
+          },
+  
+        });
+      }
+      if(json.msgUpdateOk){
+        localStorage.setItem("id",json.idEmpleado);
+        localStorage.setItem("name",json.name);
+        localStorage.setItem("image",json.image);
+        localStorage.setItem("telefone",json.telefone);
+        localStorage.setItem("direction",json.direction);
+        await Swal.fire({
+          icon: 'success',
+          showConfirmButton: false,
+          text: "Datos Guardados",
+          timer: 1000,
+          customClass: {
+            icon: "swal-icon-succ",
+            title: "swal-title",
+          },
+  
+        });
+        window.location.reload();
+      }
+      if (!res.ok) {
+        throw { status: res.status, statusText: res.statusText };
+      }
     } catch (err) {
-      console.log(err)
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: `Error: ${err.status} ${err.statusText}`,
+        showConfirmButton: false,
+        timer: 1500,
+        customClass: {
+          icon: "swal-icon-err",
+          title: "swal-title",
+        },
+      });
     }
   }
+  
+  //addproduct
+  
   const data = {
     handleFormEditProfile,
-    handleEditImagenProfile,
+    handleEditImageProfile,
     formEditProfile,
-    handleSubmitEditProfile
-
+    handleSubmitEditProfile,
+    profilePreview
   }
   return <DashboardContext.Provider value={data}>{children}</DashboardContext.Provider>
 }
