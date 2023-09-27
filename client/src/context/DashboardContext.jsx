@@ -9,11 +9,23 @@ const initialFormEditProfile = {
   direccion: localStorage.direction || "",
   file: ""
 }
+
+const initialFormAddProduct = {
+  producto: "",
+  file: "",
+  categoria: "",
+  descripcion: "",
+  precio: "",
+  stock: ""
+
+
+}
 console.log(localStorage.imageBuffer)
 
 const DashboardProvide = ({ children }) => {
   const [formEditProfile, setFormEditProfile] = useState(initialFormEditProfile);
   const [profilePreview, setProfilePreview] = useState(null);
+  const [formAddProduct, setFormAddProduct] = useState(initialFormAddProduct)
   
   //myaccount
 
@@ -107,12 +119,65 @@ const DashboardProvide = ({ children }) => {
   
   //addproduct
   
+
+  const handleFormAddProductFile = (e) => {
+    setFormAddProduct({
+      ...formAddProduct,
+      [e.target.name]: e.target.files[0]
+    })
+  }
+  const handleFormAddProduct = (e) => {
+    setFormAddProduct({
+      ...formAddProduct,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmitFormProduct = async (e) => {
+    e.preventDefault();
+    const formData = new FormData;
+    formData.append("nameProduct",formAddProduct.producto);
+    formData.append("file",formAddProduct.file);
+    formData.append("category",formAddProduct.categoria);
+    formData.append("description",formAddProduct.descripcion);
+    formData.append("price",formAddProduct.precio);
+    formData.append("stocks",formAddProduct.stock);
+    formData.append("id",localStorage.id);
+    try {
+      const res = await fetch("http://localhost:7000/api/addProduct",{
+        method: "POST",
+        body: formData
+      })
+      console.log(res);
+
+      if (!res.ok) {
+        throw { status: res.status, statusText: res.statusText };
+      }
+    } catch (err) {
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: `Error: ${err.status} ${err.statusText}`,
+        showConfirmButton: false,
+        timer: 1500,
+        customClass: {
+          icon: "swal-icon-err",
+          title: "swal-title",
+        },
+      });
+    }
+
+  }
+  
   const data = {
     handleFormEditProfile,
     handleEditImageProfile,
     formEditProfile,
     handleSubmitEditProfile,
-    profilePreview
+    profilePreview, 
+    handleFormAddProductFile,
+    handleFormAddProduct,
+    handleSubmitFormProduct
   }
   return <DashboardContext.Provider value={data}>{children}</DashboardContext.Provider>
 }
