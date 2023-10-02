@@ -10,8 +10,6 @@ import { useContext } from "react";
 import Home from "./pages/Home";
 import ProtectedAccount from "./pages/ProtectedAccount";
 import Account from "./pages/Account";
-import PagesDashboard from "./pages/PagesDashboard";
-
 
 function App() {
   const { isAuthEmployee } = useContext(FormContext);

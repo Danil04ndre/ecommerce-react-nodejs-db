@@ -142,11 +142,14 @@ const FormProvider = ({ children }) => {
       localStorage.setItem("id",json.idEmpleado);
       localStorage.setItem("email",json.email);
       localStorage.setItem("name",json.name);
+      localStorage.setItem("telefone",json.telefone);
+      localStorage.setItem("direction",json.direction);
       localStorage.setItem("image",json.image);
 
       setFormLogin(initialFormLogin);
       setIsAuthEmployee(true);
       goTo("/dashboard");
+      window.location.reload();
     }
     if(json.accountUser){      
       await Swal.fire({

@@ -9,6 +9,7 @@
     height: 100vh;
     background-color: #1A1B1D;
     position: fixed;
+    overflow-y: auto;
 }
 .panel button{
     position: absolute;
@@ -68,11 +69,12 @@
     margin-top: 20px;
     margin-bottom: 50px;
 }
-.links-account a{
+.links-account p{
     display: block;
     text-align: center;
     color: rgb(230, 230, 230);
     font-size: .85rem;
+    user-select: none;
 }
 
 

@@ -1,10 +1,14 @@
 import { useContext } from 'react'
 import '../../css/PagesDashboard.css'
-import profileDefault from '../../assets/user-default.png'
 import DashboardContext from '../../context/DashboardContext'
 const MyAccount = () => {
 
-  const {handleFormEditProfile,handleEditImageProfile,handleSubmitEditProfile,profilePreview,formEditProfile} = useContext(DashboardContext);
+  const {
+    handleFormEditProfile,
+    handleEditImageProfile,
+    handleSubmitEditProfile,
+    profilePreview,
+    formEditProfile} = useContext(DashboardContext);
   return (
     <>
     <div className="content-my-account">
@@ -12,7 +16,7 @@ const MyAccount = () => {
         <form onSubmit={handleSubmitEditProfile} className="form-my-account">
           <h2>Datos personales</h2>
           <div className="edit-img">
-            <img src={profilePreview ? profilePreview : localStorage.getItem('image') === 'imgDefault' ? profileDefault : `data:image/png;base64,${localStorage.image}`} alt="" />
+            <img src={profilePreview ? profilePreview : `data:image/png;base64,${localStorage.image}`} alt="" />
             <input type="file" id="file" name='file' onChange={handleEditImageProfile}/><br />
             <label htmlFor="file"><i className="fa-regular fa-pen-to-square"></i>Editar</label>
           </div>
@@ -39,9 +43,7 @@ const MyAccount = () => {
       </div>
     </div>
 
-    <div className="added-products">
-        <h2>Productos agreados por {localStorage.name}</h2>
-    </div>
+   
     </>
   )
 }

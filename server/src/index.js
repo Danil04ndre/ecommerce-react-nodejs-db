@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import session from "express-session";
 import {conn} from './db.js'
-
+import fs from 'fs'
 import routerEmployees from "./routes/employeesRoutes.js";
 import routerDashboard from "./routes/dashboardRoutes.js"
 

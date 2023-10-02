@@ -1,20 +1,24 @@
 import { useParams } from 'react-router-dom';
-import AddProduct from './dashboard/AddProduct';
-import GestionUsers from './dashboard/GestionUsers';
-import GestionClients from './dashboard/GestionClients';
-import GestionEmployees from './dashboard/GestionEmployees';
+import AddProducts from './dashboard/AddProducts';
 import MyAccount from './dashboard/MyAccount';
+import AllProducts from './dashboard/AllProducts';
+import GestionUsers from './dashboard/GestionUsers';
+import { useEffect } from 'react';
+import MyProducts from './dashboard/MyProducts';
 
 const PagesDashboard = () => {
-  const { link } = useParams()
-  console.log(link)
+  const { link } = useParams();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [link]);
   return (
     <>
       {link == 'agregar-producto'
-        ? <AddProduct />
-        : link == 'gestion-productos' ? <GestionUsers />
-        : link == 'gestion-clientes' ? <GestionClients />
-        : link == 'gestion-empleados' ? <GestionEmployees /> 
+        ? <AddProducts />
+        : link == 'gestion-productos' ? <AllProducts />
+        : link == 'gestion-usuarios' ? <GestionUsers />
+        : link == 'mis-productos' ? <MyProducts />
         : link == 'mi-cuenta' ? <MyAccount /> 
         : <MyAccount />}
     </>

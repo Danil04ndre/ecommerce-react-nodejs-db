@@ -2,8 +2,9 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import FormContext from "../context/FormContext";
 import "../css/Dashboard.css";
-import profileDefault from "../assets/user-default.png";
 import PagesDashboard from "./PagesDashboard";
+
+
 const Dashboard = () => {
   const goTo = useNavigate();
   const { setIsAuthEmployee } = useContext(FormContext);
@@ -28,24 +29,24 @@ const Dashboard = () => {
       <div className="panel">
         <div className="panel-content">
           <div className="content-img-profile">
-            <img src={localStorage.getItem('image') === 'imgDefault' ? profileDefault : `data:image/png;base64,${localStorage.image}`} alt="" />
+            <img src={`data:image/png;base64,${localStorage.image}`} alt="" />
           </div>
           <div className="links-account">
-            <Link to="/dashboard/mi-cuenta">{localStorage.name}</Link>
-            <Link to="/dashboard/mi-cuenta">{localStorage.email}</Link>
+            <p>{localStorage.name}</p>
+            <p>{localStorage.email}</p>
           </div>
 
           <span>Navegacion</span>
 
           <div className="links-dashboard">
+            <Link to="/dashboard/mi-cuenta">Mi cuenta</Link>
+            <Link to="/dashboard/mis-productos">Mis productos agregados</Link>
             <Link to="/dashboard/agregar-producto">Agrear nuevo Producto</Link>
-            <Link to="/dashboard/gestion-productos">Gestion de Productos</Link>
-            <Link to="/dashboard/gestion-clientes">Gestion de Clientes</Link>
-            <Link to="/dashboard/gestion-empleados">Gestion de Empleados</Link>
+            <Link to="/dashboard/gestion-productos">Todos los Productos</Link>
+            <Link to="/dashboard/gestion-usuarios">Gestion de Usuarios</Link>
+
           </div>
           <button onClick={handleSignout}><i className="fa-solid fa-arrow-right-from-bracket"></i> Cerrar session</button>
-
-
         </div>
       </div>
 

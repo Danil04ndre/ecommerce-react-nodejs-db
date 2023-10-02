@@ -1,8 +1,12 @@
 import { conn } from "../db.js";
 import bcrypt from "bcrypt";
+import fs from 'fs'
+
+
 
 export const register = async (req, res) => {
   try {
+   
     const { nombre, email, contrasena, option } = req.body;
     const tablaDb = option == "usuario" ? "usuarios" : "empleados";
 
@@ -31,10 +35,12 @@ export const register = async (req, res) => {
         res.status(404).json({ msg: "Error al registrar." });
       }
     } else {
+      const imageDefault = fs.readFileSync("../imageDefault/profile.jpg");
       const hashedPassword = await bcrypt.hash(contrasena, 10);
+
       const sql = await conn.query(
-        "INSERT INTO empleados (nombre,email,contrasena) VALUES (?,?,?)",
-        [nombre, email, hashedPassword]
+        "INSERT INTO empleados (nombre,email,contrasena,imagen) VALUES (?,?,?,?)",
+        [nombre, email, hashedPassword,imageDefault]
       );
 
       if (sql[0].affectedRows > 0) {
@@ -77,22 +83,20 @@ export const login = async (req, res) => {
         res.json({ msgFalsePass: "Contraseña incorrecta." });
       }
     } else if (sqlEmpleados[0].length > 0) {
-      console.log("bienvenido empleado");
+
       const contrasenaDb = sqlEmpleados[0][0].contrasena;
       const contrasenaCorrecta = await bcrypt.compare(contrasena, contrasenaDb);
-      console.log(contrasenaCorrecta);
+
       if (contrasenaCorrecta) {
-        const idEmpleado = (req.session.idEmpleado =
-          sqlEmpleados[0][0].idEmpleado);
+
+        const idEmpleado = (req.session.idEmpleado = sqlEmpleados[0][0].idEmpleado);
         const name = (req.session.name = sqlEmpleados[0][0].nombre);
         const email = (req.session.email = sqlEmpleados[0][0].email);
-        const image = sqlEmpleados[0][0].imagen
-          ? (req.session.image = sqlEmpleados[0][0].imagen.toString("base64"))
-          : 'imgDefault';
-      
-
-        console.log(sqlEmpleados[0][0]);
-        res.json({ accountEmployee: true, name, email, idEmpleado, image });
+        const telefone = (req.session.telefone = sqlEmpleados[0][0].telefono);
+        const direction = (req.session.direction = sqlEmpleados[0][0].direccion);
+        const image = (req.session.image = sqlEmpleados[0][0].imagen.toString("base64"));
+    
+        res.json({ accountEmployee: true, name, email, idEmpleado, telefone,direction,image });
       } else {
         res.json({ msgFalsePass: "Contraseña incorrecta." });
       }

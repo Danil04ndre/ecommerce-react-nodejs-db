@@ -1,168 +1,332 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
 /* ESTILOS MY-ACCOUNT */
+.content-my-account {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 .form-my-account {
-    max-width: 620px;
-    display: grid;
-    margin: 20px auto;
-    grid-template-columns: 1fr 1fr;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    padding: 20px;
-    font-family: 'Montserrat', sans-serif;
-    column-gap: 20px;
+  width: 700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+  column-gap: 20px;
 }
 .form-my-account h2 {
-    font-family: 'Montserrat', sans-serif;
-}
-.form-my-account .edit{
-    margin-bottom: 20px;
-}
-.form-my-account div input {
-    outline: none;
-    padding: 7px 15px;
-    font-size: .89rem;
-    border: 1px solid rgb(196, 196, 196);
-    font-family: 'Montserrat', sans-serif;
-    width: 100%;
-}
-.form-my-account div label {
-    font-size: .97rem;
-    margin-bottom: 3px;
-    display: inline-block;
-}
-.form-my-account input[type="submit"]{
-    grid-column: span 2;
-    width: max-content;
-    margin: 0 auto;
-    background-color: rgb(25, 135, 84);
-    border: none;
-    padding: 4px 10px 5px 10px;
-    text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    color: white;
-    transition: background-color .1s ease, transform .1s ease;
-}
-.form-my-account input[type="submit"]:hover {
-    background-color: rgb(23, 110, 69);
-    transform: scale(1.03);
+  font-family: "Montserrat", sans-serif;
 
 }
-.edit-img {
-    grid-column: span 2;
-    margin: 0 auto;
-    width: 200px;
-    height: 190px;
-    margin-bottom: 80px;
+.form-my-account .edit {
+  margin-bottom: 20px;
 }
-.edit-img img{
-    width: 100%;
-    height: 100%;
-    background-size: cover;
+.form-my-account div input {
+  outline: none;
+  padding: 7px 15px;
+  font-size: 0.89rem;
+  border: 1px solid rgb(196, 196, 196);
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+}
+.form-my-account div label {
+  font-size: 0.97rem;
+  margin-bottom: 3px;
+  display: inline-block;
+}
+.form-my-account input[type="submit"] {
+  grid-column: span 2;
+  width: max-content;
+  margin: 0 auto;
+  background-color: rgb(25, 135, 84);
+  border: none;
+  padding: 4px 10px 5px 10px;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.1s ease, transform 0.1s ease;
+}
+.form-my-account input[type="submit"]:hover {
+  background-color: rgb(23, 110, 69);
+  transform: scale(1.03);
+}
+.edit-img {
+  grid-column: span 2;
+  margin: 0 auto;
+  width: 200px;
+  height: 190px;
+  margin-bottom: 80px;
+}
+.edit-img img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
 }
 .edit-img input {
-    display: none;
+  display: none;
 }
 
 .edit-img label {
-    background-color: rgb(4, 108, 177);
-    color: white;
-    text-transform: uppercase;
-    font-size: .9rem !important;
-    padding: 2px 9px 1px 9px;
-    border-radius: 5px;
-    display: block;
-    width: max-content;
-    cursor: pointer;
-    display: block !important;
-    margin: 10px auto 0 auto;
-    transition: background-color .1s ease;
-
+  background-color: rgb(4, 108, 177);
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.9rem !important;
+  padding: 2px 9px 1px 9px;
+  border-radius: 5px;
+  display: block;
+  width: max-content;
+  cursor: pointer;
+  display: block !important;
+  margin: 10px auto 0 auto;
+  transition: background-color 0.1s ease;
 }
-.edit-img label:hover{
-    background-color: rgb(2, 92, 151);
-
+.edit-img label:hover {
+  background-color: rgb(2, 92, 151);
 }
 .edit-img i {
-   margin-right: 6px;
+  margin-right: 6px;
 }
-.added-products{
-    font-family: 'Montserrat', sans-serif;
-    padding: 0 20px;
+.added-products {
+  font-family: "Montserrat", sans-serif;
+  padding: 0 20px;
+}
+.added-products h3 {
+  margin: 20px 0 30px 0;
+  text-align: center;
+  width: max-content;
+  background-color: rgb(4, 108, 177);
+  color: white;
+  padding: 10px 20px;
+}
+.added-products table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 50px;
 }
 
+.added-products thead tr {
+  background-color: white !important;
+}
+.added-products thead th {
+  padding: 30px 0;
+}
+.added-products tbody button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  background-color: #1a1b1d;
+  padding: 6px;
+  border-radius: 5px;
+  transition: transform 0.1s ease;
+}
+.added-products tbody button i {
+  font-size: 1.5rem;
+  color: rgb(230, 230, 230);
+}
+.added-products tbody button:hover {
+  transform: scale(1.05);
+}
 
+.added-products tr {
+  border-bottom: 1px solid rgb(199, 197, 197);
+  transition: backround-color 0.1s ease;
+}
+.added-products tr:last-child {
+  border: none;
+}
+.added-products tbody tr:hover {
+  background-color: rgb(25, 135, 84);
+  color: white;
+}
+.added-products td {
+  padding: 10px 0;
+}
+.content-img {
+  width: 130px;
+  height: 100px;
+  margin: 0 auto;
+}
+.content-img img {
+  width: 100%;
+  height: 100% !important;
+  border-radius: 5px;
+  object-position: center center;
+}
+
+.added-products tr:nth-child(odd) {
+  /* background-color: #f0ebeb */
+}
 /* ESTILOS ADD-PRODUCT */
+.content-add-product{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.form-add-product {
+  width: 900px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  margin: 0 auto;
+  padding: 25px 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
 
-.form-add-product{
-    max-width: 500px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    margin: 20px auto;
-    padding: 25px 30px;
-    
+.form-add-product h2{
+  grid-column: span 2;
 }
-.form-add-product div{
-    width: 100%;
-    margin: 10px 0;
+.form-add-product div {
+  width: 100%;
+  margin: 10px 0;
 }
-.form-add-product div label{
-    font-size: .97rem;
+.form-add-product div label {
+  font-size: 0.97rem;
 }
 
-.form-add-product input,textarea{
-    width: 100%;
-    padding: 7px 15px;
-    outline: none;
-    font-size: .89rem;
-    border: 1px solid rgb(196, 196, 196);
-    font-family: 'Montserrat', sans-serif;
+.form-add-product input,
+textarea,
+select {
+  width: 100%;
+  padding: 7px 15px;
+  outline: none;
+  font-size: 0.89rem;
+  border: 1px solid rgb(196, 196, 196);
+  font-family: "Montserrat", sans-serif;
+}
+.form-add-product textarea{
+  height: 275px;
+}
+.label-textarea{
+  margin-bottom: 8px;
+  display: inline-block;
 }
 .form-add-product textarea {
-    resize: none;
+  resize: none;
 }
 .form-add-product .img-product {
-    background-color: rgb(4, 108, 177);
-    cursor: pointer;
-    color: white;
-    padding: 2px 9px 3px 9px;
-    border-radius: 5px;
-    font-size: .9rem !important;
-    display: block;
-    margin: 0 auto;
-    width: max-content;
-    text-align: center;
-    transition: background-color .1s ease;
+  background-color: rgb(4, 108, 177);
+  cursor: pointer;
+  color: white;
+  padding: 2px 9px 1px 9px;
+  border-radius: 5px;
+  font-size: 0.9rem !important;
+  display: inline-block;
+  margin: 0 auto 8px auto;
+  width: max-content;
+  text-align: center;
+  transition: background-color 0.1s ease;
 }
 .form-add-product .img-product:hover {
-    background-color: rgb(2, 92, 151);
+  background-color: rgb(2, 92, 151);
 }
 .form-add-product .img-product i {
-   margin-right: 6px;
+  margin-right: 6px;
 }
-.form-add-product input[type="file"]{
-    display: none;
+.form-add-product input[type="file"] {
+  display: none;
 }
-.content-img-product{
-    border: 1px solid rgb(196, 196, 196);
-    width: 100%;
-    height: 190px;
+.content-img-product {
+  height: 275px;
+  margin: 0 auto !important;
 }
-.form-add-product input[type="submit"]{
-
-    margin-top: 10px;
-    background-color: rgb(25, 135, 84);
-    border: none;
-    padding: 6px 10px 7px 10px;
-    text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    color: white;
-    transition: background-color .1s ease;
+.content-img-product img {
+  width: 100%;
+  height: 100%;
+}
+.form-add-product input[type="submit"] {
+  margin-top: 10px;
+  background-color: rgb(25, 135, 84);
+  border: none;
+  padding: 6px 10px 7px 10px;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.1s ease;
+  grid-column: span 2;
+  justify-self: center;
+  width: max-content;
 }
 .form-add-product input[type="submit"]:hover {
-    background-color: rgb(23, 110, 69);
+  background-color: rgb(23, 110, 69);
 }
+
+/* ESTILOS ALL-PRODUCTS */
+.content-all-products {
+  padding: 0 20px;
+}
+.content-all-products div {
+  max-width: max-content;
+  margin-bottom: 10px;
+  margin-left: auto;
+}
+.content-all-products div input {
+  width: 300px;
+  height: 30px;
+  outline: none;
+  padding: 0 10px;
+  border: 1px solid rgb(124, 122, 122);
+}
+.content-all-products h3 {
+  margin: 20px 0;
+  text-align: center;
+  width: max-content;
+  background-color: rgb(25, 135, 84);
+
+  color: white;
+  padding: 10px 20px;
+}
+.content-all-products table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.content-all-products thead tr {
+  background-color: white !important;
+}
+.content-all-products thead th {
+  padding: 30px 0;
+}
+.content-all-products tr {
+  border-bottom: 1px solid rgb(199, 197, 197);
+  transition: backround-color 0.1s ease;
+}
+.content-all-products tr:last-child {
+  border: none;
+}
+.content-all-products tbody tr:hover {
+  background-color: rgb(4, 108, 177);
+  color: white;
+}
+.content-all-products td {
+  padding: 10px 0;
+}
+/* .hola {
+  white-space: normal; 
+  max-width: 200px; 
+
+
+  overflow: auto; 
+  text-overflow: ellipsis; 
+  overflow-wrap: break-word; 
+  display: block;
+  display: table-cell; 
+}
+ */
+
+
