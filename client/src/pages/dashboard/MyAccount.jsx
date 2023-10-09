@@ -23,19 +23,19 @@ const MyAccount = () => {
 
           <div  className='edit'>
             <label>Nombre</label><br />
-            <input type="text" name='nombre' onChange={handleFormEditProfile} value={formEditProfile.nombre}/>
+            <input type="text" name='nombre' autoComplete="off" onChange={handleFormEditProfile} value={formEditProfile.nombre}/>
           </div>
           <div className='end edit'>
             <label>Telefono</label> <br />
-            <input type="number" name='telefono' onChange={handleFormEditProfile} value={formEditProfile.telefono}/>
+            <input type="number" name='telefono' autoComplete="off" onChange={handleFormEditProfile} value={formEditProfile.telefono}/>
           </div>
           <div className='edit'>
             <label>Email</label><br />
-            <input readOnly type="text" name='email' onChange={handleFormEditProfile} value={formEditProfile.email}/>
+            <input readOnly type="text" name='email'  onChange={handleFormEditProfile} value={formEditProfile.email}/>
           </div>
           <div className='end edit'>
             <label>Direccion</label><br />
-            <input type="text" name='direccion' onChange={handleFormEditProfile} value={formEditProfile.direccion}/>
+            <input type="text" name='direccion' autoComplete="off" onChange={handleFormEditProfile} value={formEditProfile.direccion}/>
           </div>
           <input type="submit" value="Guardar cambios"/>
         </form>

@@ -1,7 +1,7 @@
 import { Router} from 'express';
 
 import multer from 'multer';
-import {addProduct, editProfileEmployee,getAddedProducts,deleteProduct,getAllProducts} from '../controllers/dashboardController.js'
+import {addProduct, editProfileEmployee,getAddedProducts,deleteProduct,getAllProducts} from '../controllers/dashboardControllers.js'
 
 
 const disStorage = multer.memoryStorage();

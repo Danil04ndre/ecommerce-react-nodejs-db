@@ -1,4 +1,4 @@
-import Header from "./components/common/Header";
+import Header from "./components/Header";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
 import Register from "./pages/Register";
@@ -9,7 +9,11 @@ import Dashboard from "./pages/Dashboard";
 import { useContext } from "react";
 import Home from "./pages/Home";
 import ProtectedAccount from "./pages/ProtectedAccount";
-import Account from "./pages/Account";
+import Footer from "./components/Footer";
+import Catalogs from "./pages/Catalogs";
+import Detail from "./pages/Detail";
+import Cart from "./pages/Cart";
+import MyShopping from "./pages/MyShopping";
 
 function App() {
   const { isAuthEmployee } = useContext(FormContext);
@@ -22,17 +26,23 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/:category" element={<Catalogs />}/>
+        <Route path="/:category/:id" element={<Detail />}/>
+        <Route path="/cart" element={<Cart />}/>
+
+        {/* dashboard */}
         <Route path="/" element={<ProtectedDashboard />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/dashboard/:link" element={<Dashboard />}/>
         </Route>
-
         <Route path="/" element={<ProtectedAccount />}>
-          <Route path="/account" element={<Account />} />
+          <Route path="/my-shopping" element={<MyShopping />} />
         </Route>
         <Route path="*" element={<h1>NO EXISTE LA RUTA</h1>} />
 
       </Routes>
+      {!isAuthEmployee && <Footer />}
+
     </>
   );
 }

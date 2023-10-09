@@ -2,7 +2,6 @@ import { useParams } from 'react-router-dom';
 import AddProducts from './dashboard/AddProducts';
 import MyAccount from './dashboard/MyAccount';
 import AllProducts from './dashboard/AllProducts';
-import GestionUsers from './dashboard/GestionUsers';
 import { useEffect } from 'react';
 import MyProducts from './dashboard/MyProducts';
 
@@ -17,7 +16,6 @@ const PagesDashboard = () => {
       {link == 'agregar-producto'
         ? <AddProducts />
         : link == 'gestion-productos' ? <AllProducts />
-        : link == 'gestion-usuarios' ? <GestionUsers />
         : link == 'mis-productos' ? <MyProducts />
         : link == 'mi-cuenta' ? <MyAccount /> 
         : <MyAccount />}

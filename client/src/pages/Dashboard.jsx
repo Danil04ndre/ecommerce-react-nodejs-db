@@ -21,6 +21,7 @@ const Dashboard = () => {
     setIsAuthEmployee(false);
     // Redirigir al usuario a la pagina de inicio
     goTo("/");
+    window.location.reload();
   };
 
  
@@ -43,8 +44,6 @@ const Dashboard = () => {
             <Link to="/dashboard/mis-productos">Mis productos agregados</Link>
             <Link to="/dashboard/agregar-producto">Agrear nuevo Producto</Link>
             <Link to="/dashboard/gestion-productos">Todos los Productos</Link>
-            <Link to="/dashboard/gestion-usuarios">Gestion de Usuarios</Link>
-
           </div>
           <button onClick={handleSignout}><i className="fa-solid fa-arrow-right-from-bracket"></i> Cerrar session</button>
         </div>

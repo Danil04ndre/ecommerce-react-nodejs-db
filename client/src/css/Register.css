@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto:wght@300;400&display=swap");
 
 .content-form {
   margin-top: 50px;
@@ -12,7 +13,7 @@
 }
 .content-form h1 {
   text-align: center;
-  color: rgb(252, 97, 7);
+  color: #4E89E5;
 }
 .content-form span {
   display: block;
@@ -28,7 +29,7 @@
   border: 1px solid gray;
 }
 .content-form form i {
-  color: rgb(252, 97, 7);
+  color: #4E89E5;
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
@@ -56,7 +57,7 @@
   color: rgb(63, 63, 62);
   font-style: italic;
   font-weight: 450;
-  color: rgb(252, 97, 7);
+  color: #4E89E5;
 }
 .radio-container {
   border: none !important;
@@ -73,13 +74,13 @@
   margin-left: 25px;
 }
 .content-form strong {
-  color: rgb(252, 97, 7);
+  color: #4E89E5;
 }
 .content-form input[type="submit"] {
   width: 100% !important;
   height: 35px !important;
   cursor: pointer;
-  background-color: rgb(252, 97, 7);
+  background-color: #4E89E5;
   border-radius: 3px;
   font-size: 1rem !important;
   color: white;
@@ -88,7 +89,7 @@
   margin-top: 20px;
 }
 .content-form input[type="submit"]:hover {
-  background-color: rgb(255, 72, 0);
+  background-color: #2a72e6;
 }
 .acount-list {
   margin-top: 5px;

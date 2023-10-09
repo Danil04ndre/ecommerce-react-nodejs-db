@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto:wght@300;400&display=swap");
+
+.my-shoppin table {
+  border-collapse: collapse;
+  font-family: "Roboto", sans-serif;
+  margin: 70px auto 20px auto;
+  text-align: center;
+}
+.my-shoppin p {
+  margin: 70px 0 20px 0;
+  font-size: 2rem;
+  text-align: center;
+}
+.my-shoppin table th {
+  font-weight: 600;
+}
+.my-shoppin table tr,
+td,
+th {
+  border: 1px solid rgb(197, 197, 197);
+}
+
+.my-shoppin table td,
+th {
+  padding: 5px 10px;
+}
+.my-shoppin table tbody i {
+  color: #4e89e5;
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 900px) {
+  .my-shoppin table {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .my-shoppin p {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 530px) {
+  .my-shoppin {
+    overflow-x: auto;
+    padding: 0 10px;
+  }
+  .my-shoppin table {
+    font-size: 0.8rem;
+  }
+  .my-shoppin table td,
+  th {
+    padding: 3px 5px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .my-shoppin p {
+    font-size: 1.2rem;
+    padding: 0 10px;
+  }
+}

@@ -1,7 +1,9 @@
 import { useContext } from "react"
 import { Navigate } from "react-router-dom";
 import FormContext from "../context/FormContext"
-import HeroSlide from "../components/users/HeroSlide";
+import HeroSlide from "../components/HeroSlide";
+import SubSlide from "../components/SubSlide";
+import Cards from "../components/Cards";
 
 
 const Home = () => {
@@ -13,6 +15,8 @@ const Home = () => {
   return (
     <>
       <HeroSlide />
+      <SubSlide />
+      <Cards />
     </>
   )
 }

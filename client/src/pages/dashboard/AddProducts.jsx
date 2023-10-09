@@ -11,12 +11,12 @@ const AddProducts = () => {
           <div>
             <label>Nombre Producto</label>
             <br />
-            <input type="text" name="producto" onChange={handleFormAddProduct}/>
+            <input type="text" autoComplete="off" name="producto" onChange={handleFormAddProduct} required/>
           </div>
           <div>
             <label>Categoria</label>
             <br />
-            <select name="categoria" onChange={handleFormAddProduct} defaultValue="">
+            <select name="categoria" onChange={handleFormAddProduct} defaultValue="" required>
               <option value="" disabled>Seleccione una categoria</option>
               <option value="Laptops">Laptops</option>
               <option value="Computadoras">Computadoras</option>
@@ -29,7 +29,7 @@ const AddProducts = () => {
           <div>
           <label htmlFor="product" className="img-product"><i className="fa-regular fa-circle-up"></i>Adjuntar imagen</label>
             <br />
-            <input type="file" id="product" name="file" onChange={handleFormAddProductFile}/>
+            <input type="file" id="product" name="file" autoComplete="off" required onChange={handleFormAddProductFile}/>
             <div className="content-img-product">
             <img src={productPreview} alt="" />
           </div>
@@ -41,12 +41,12 @@ const AddProducts = () => {
           <div>
             <label>Precio</label>
             <br />
-            <input type="number" name="precio" onChange={handleFormAddProduct}/>
+            <input type="number" name="precio" autoComplete="off" onChange={handleFormAddProduct} required/>
           </div>
           <div>
             <label>Stock</label>
             <br />
-            <input type="number" name="stock" onChange={handleFormAddProduct}/>
+            <input type="number" name="stock" autoComplete="off" onChange={handleFormAddProduct} required/>
           </div>
           <input type="submit" value="Añadir producto"/>
         </form>

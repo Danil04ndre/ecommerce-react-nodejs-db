@@ -1,19 +1,25 @@
-import React, { useContext } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from "swiper";
 import { Navigation, Scrollbar, A11y, Autoplay } from 'swiper/modules';
-import UserContext from '../../context/UserContext';
-import "../../css/HeroSlide.css";
+import "../css/HeroSlide.css"
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
+import imagen1 from '../assets/imagen1.jpg'
+import imagen2 from '../assets/imagen2.jpg'
+import imagen3 from '../assets/imagen3.jpg'
+import imagen4 from '../assets/imagen4.jpg'
+import imagen5 from '../assets/imagen5.jpg'
+
+const dataHeroSlide = [imagen1,imagen2,imagen3,imagen4,imagen5]
+
+
 
 const HeroSlide = () => {
-  const { getDataProducts } = useContext(UserContext);
-  console.log(getDataProducts);
   SwiperCore.use([Autoplay]);
+
   return (
     <div className="content-slide">
       <Swiper
@@ -21,18 +27,14 @@ const HeroSlide = () => {
         spaceBetween={0}
         slidesPerView={1}
         navigation
-      
         scrollbar={{ draggable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}
-        autoplay={{ delay: 4000 }}
+        autoplay={{ delay: 4000, disableOnInteraction: false }}
       >
-        {getDataProducts.map((el, index) => (
+        {dataHeroSlide.map((el, index) => (
 
           <SwiperSlide key={index}>
-            <div className="hero-background" style={{ backgroundImage: `url(data:image/png;base64,${el.imagen})` }}>
-              <p>asdsad</p>
-
+            <div className="hero-background">
+              <img src={el} alt="" />
             </div>
 
           </SwiperSlide>
@@ -41,8 +43,6 @@ const HeroSlide = () => {
 
 
       </Swiper>
-
-      <div className="a"></div>
     </div>
   )
 }

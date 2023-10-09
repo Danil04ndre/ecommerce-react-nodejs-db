@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto:wght@300;400&display=swap");
+
+.content-detail {
+  margin: 50px 0;
+}
+.content-detail .card {
+  font-family: "Roboto", sans-serif;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  max-width: 850px;
+  margin: 0 auto;
+  color: black;
+  padding: 30px 20px;
+  column-gap: 50px;
+}
+.content-detail .card small {
+  color: #4e89e5;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.content-detail .card .data-img {
+  width: 50%;
+}
+.content-detail .card .data-img img {
+  width: 100%;
+}
+.content-detail .card .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 50%;
+}
+.content-detail .card .info * {
+  margin: 5px 0;
+}
+.content-detail .card .c {
+  color: black;
+  font-size: 1.7rem;
+}
+.content-detail .card .price {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.content-detail .options {
+  display: flex;
+  justify-content: space-between;
+}
+.content-detail .options a {
+  background-color: #4e89e5;
+  padding: 5px 10px;
+  color: black;
+  border-radius: 5px;
+  font-size: 1.05rem;
+
+  transition: transform 150ms ease;
+}
+.content-detail .options a:hover {
+  transform: scale(1.05);
+}
+.content-detail .card button {
+  width: max-content;
+  margin-left: auto !important;
+  padding: 5px 10px;
+  font-size: 1.05rem;
+  border: none;
+  background-color: #ffec00;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  transition: transform 150ms ease;
+}
+.content-detail .card button:hover {
+  transform: scale(1.05);
+}
+.content-detail .card .g {
+  color: #10ac5b;
+}
+@media screen and (max-width: 700px) {
+  .content-detail {
+    margin: 40px 0;
+  }
+  .content-detail .card .c {
+    font-size: 1.5rem;
+  }
+  .content-detail .card button {
+    padding: 3px 8px;
+    font-size: 0.9rem;
+  }
+  .content-detail .options a {
+    padding: 1px 8px;
+    font-size: 0.9rem;
+  }
+  .content-detail .card .price {
+    font-size: 1.3rem;
+  }
+  .content-detail .card .g {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 580px) {
+  .content-detail .options {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+@media screen and (max-width: 470px) {
+  .content-detail .options {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .content-detail .card {
+    padding: 20px 10px;
+  }
+  .content-detail {
+    margin: 30px 0;
+  }
+  .content-detail .card {
+    flex-direction: column;
+  }
+  .content-detail .card .info {
+    width: 100%;
+  }
+  .content-detail .card .data-img {
+    width: 100%;
+  }
+  .content-detail .card .c {
+    font-size: 1.2rem;
+  }
+  .content-detail .card button {
+    padding: 3px 8px;
+    font-size: 0.9rem;
+  }
+
+  .content-detail .card .price {
+    font-size: 1.2rem;
+  }
+  .content-detail .card p {
+    font-size: 0.8rem;
+  }
+}

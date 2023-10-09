@@ -18,6 +18,7 @@ const AllProducts = () => {
         <label>Buscar Empleado (Nombre)</label> <br />
         <input
           type="text"
+          autoComplete="off"
           name="search"
           value={searchTerm}
           onChange={handleSearchChange}

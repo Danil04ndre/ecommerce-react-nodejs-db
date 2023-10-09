@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import PropTypes from "prop-types";
 
 const DashboardContext = createContext();
 const initialFormEditProfile = {
@@ -161,7 +162,6 @@ const DashboardProvider = ({ children }) => {
         }
       );
       const json = await res.json();
-      console.log(json);
       if (json.msgUpdateOk) {
         localStorage.setItem("id", json.idEmpleado);
         localStorage.setItem("name", json.name);
@@ -388,5 +388,8 @@ const DashboardProvider = ({ children }) => {
   );
 };
 
+DashboardProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 export { DashboardProvider };
 export default DashboardContext;

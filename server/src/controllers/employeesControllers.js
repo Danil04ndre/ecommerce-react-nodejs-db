@@ -55,7 +55,6 @@ export const register = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-  console.log(req.body);
   try {
     const { email, contrasena } = req.body;
     const sqlUsuarios = await conn.query(
@@ -68,7 +67,6 @@ export const login = async (req, res) => {
     );
 
     if (sqlUsuarios[0].length > 0) {
-      console.log("bienvenido usuario");
       const contrasenaDb = sqlUsuarios[0][0].contrasena;
       const contrasenaCorrecta = await bcrypt.compare(contrasena, contrasenaDb);
 
@@ -78,7 +76,6 @@ export const login = async (req, res) => {
         const email = (req.session.email = sqlUsuarios[0][0].email);
 
         res.json({ accountUser: true, name, email, idUsuario });
-        console.log(req.session);
       } else {
         res.json({ msgFalsePass: "Contraseña incorrecta." });
       }

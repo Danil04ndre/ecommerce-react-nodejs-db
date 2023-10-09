@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import PropTypes from "prop-types";
 import Swal from 'sweetalert2';
 const FormContext = createContext();
 
@@ -56,7 +56,6 @@ const FormProvider = ({ children }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formRegister);
     try {
       const res = await fetch("http://localhost:7000/api/register", {
         method: "POST",
@@ -66,8 +65,6 @@ const FormProvider = ({ children }) => {
         body: JSON.stringify(formRegister),
       });
       const json = await res.json();
-      console.log(res);
-      console.log(json);
 
       if(json.msgEmail){
         Swal.fire({
@@ -126,8 +123,6 @@ const FormProvider = ({ children }) => {
       body: JSON.stringify(formLogin)
     })
     const json = await res.json();
-    console.log(res);
-    console.log(json);
     if(json.accountEmployee){
       await Swal.fire({
         icon: 'success',
@@ -169,8 +164,8 @@ const FormProvider = ({ children }) => {
       setFormLogin(initialFormLogin);
       setIsAuthUser(true);
       goTo("/");
+      window.location.reload();
     }
-    console.log(json.msgEmail)
     if(json.msgEmail){
       setEmailNotFound(json.msgEmail);
       setFalsePassword(null);
@@ -225,5 +220,8 @@ const FormProvider = ({ children }) => {
   return <FormContext.Provider value={data}>{children}</FormContext.Provider>;
 };
 
+FormProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 export { FormProvider };
 export default FormContext;

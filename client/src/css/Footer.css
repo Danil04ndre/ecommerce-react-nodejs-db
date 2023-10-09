@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto:wght@300;400&display=swap");
+
+.footer{
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.footer div{
+    width: 25%;
+    font-size: .85rem;
+    text-align: center;
+}
+.footer div *{
+    font-family: "Roboto", sans-serif;
+    margin: 15px 0;
+}
+.footer div .title{
+    font-size: 1.05rem;
+}
+.footer div .question{
+   color: #4E89E5;
+   cursor: pointer;
+}
+@media screen and (max-width: 525px) {
+    .footer div img{
+        width: 50px;
+    }
+    .footer div .title{
+        font-size: .9rem;
+    }
+    .footer div .text,.question{
+        font-size: .79rem;
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+    .footer{
+        flex-direction: column;
+        align-items: center;
+    padding: 20px 10px;
+
+    }
+
+    .footer div *{
+        margin: 5px 0;
+    }
+    .footer div{
+        width: 100%;
+        font-size: .85rem;
+        text-align: center;
+        margin: 15px 0;
+    }
+    .footer div img{
+        width: 45px;
+    }
+    .footer div .title{
+        font-size: .9rem;
+    }
+    .footer div .text,.question{
+        font-size: .79rem;
+    }
+
+}

@@ -12,14 +12,13 @@ const Login = () => {
     return <Navigate to="/"/>
 
   }
-
   return (
     <div className='content-form'>
       <form onSubmit={handleLogin}>
-        <h1>Iniciar sesión</h1>
+        <h1>Iniciar sesion</h1>
         <span>Lorem ipsum dolor sit amet.</span>
         <div>
-          <input type="email" placeholder="Email" name="email" required onChange={handleFormLogin} value={formLogin.email}/>
+          <input type="email" autoComplete="off" placeholder="Email" name="email" required onChange={handleFormLogin} value={formLogin.email}/>
           <i className="fa-regular fa-envelope"></i>
         </div>
         <div>
@@ -40,7 +39,7 @@ const Login = () => {
         {emailNotFound && <span style={{color: 'red', textAlign: 'start', fontWeight: 'bold'}}>{emailNotFound}</span>}
         {falsePassword && <span style={{color: 'red', textAlign: 'start', fontWeight: 'bold'}}>{falsePassword}</span>}
 
-        <input type="submit" value="Crear cuenta" />
+        <input type="submit" value="Iniciar sesion" />
         <small className="acount-list">¿No tienes cuenta? <Link to="/register"><strong>Crear Cuenta</strong></Link></small>
       </form>
     </div>

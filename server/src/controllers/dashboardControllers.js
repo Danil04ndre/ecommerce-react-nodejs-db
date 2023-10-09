@@ -4,7 +4,6 @@ export const editProfileEmployee = async (req, res) => {
     try {
       const imagen = req.file;
       const id = req.params.id;
-      // console.log(imagen)
     
       const { nombre, telefono, direccion } = req.body;
       const ifNull = imagen == undefined ? null : imagen;
@@ -56,7 +55,6 @@ export const addProduct = async (req,res) =>{
     const sql = await conn.query("INSERT INTO productos (nombreProducto,imagen,categoria,descripcion,precio,stock,idEmpleado) VALUES (?,?,?,?,?,?,?)",
     [nameProduct,image.buffer,category,description,price,stocks,id]);
 
-    console.log(sql[0].affectedRows);
     if(sql[0].affectedRows > 0){
       res.status(200).json({msgOk: 'Producto registrado'});
     } else{

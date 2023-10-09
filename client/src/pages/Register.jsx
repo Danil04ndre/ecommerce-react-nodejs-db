@@ -32,6 +32,7 @@ const Register = () => {
             maxLength="18"
             placeholder="Nombre de usuario"
             required
+            autoComplete="off"
             name="nombre"
             onChange={handleFormRegister}
             value={formRegister.nombre}
@@ -43,6 +44,7 @@ const Register = () => {
             type="email"
             placeholder="Email"
             name="email"
+            autoComplete="off"
             required
             onChange={handleFormRegister}
             value={formRegister.email}
@@ -53,6 +55,7 @@ const Register = () => {
           <input
             type={!visiblePassword ? "password" : "text"}
             placeholder="Contraseña"
+            autoComplete="off"
             required
             pattern="^(?=.*[0-9])(?=.*[a-zA-Z]).{5,}$"
             title="La contraseña debe contener al menos 5 caracteres, incluyendo numeros y letras."
@@ -106,7 +109,6 @@ const Register = () => {
         </small>
       </form>
       <br />
-      <Link to="/panel">sistema go</Link>
     </div>
   );
 };
