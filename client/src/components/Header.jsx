@@ -1,6 +1,6 @@
 import "../css/Header.css";
 import logo from "../assets/logo.png";
-import { NavLink, Link, useNavigate } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useRef, useState } from "react";
 import { useContext } from "react";
 import FormContext from "../context/FormContext";
@@ -92,7 +92,7 @@ const Header = () => {
               <NavLink to="/impresoras" className={({isActive}) => isActive ? 'active-link' : ''}>Impresoras</NavLink>
               <NavLink to="/mouse" className={({isActive}) => isActive ? 'active-link' : ''}>Mouse</NavLink>
               <NavLink to="/otros" className={({isActive}) => isActive ? 'active-link' : ''}>Otros</NavLink>
-              {activeNav && <button onClick={handleSignout} className="logout">Cerrar sesion</button>}
+              {activeNav && isAuthUser && <button onClick={handleSignout} className="logout">Cerrar sesion</button>}
               {!activeNav && 
                 <Link to={!isAuthUser ? '/login' : null} className="account" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                   <i className="fa-solid fa-user"></i>

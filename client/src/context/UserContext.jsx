@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import PropTypes from "prop-types";
-import { json, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
@@ -68,7 +68,7 @@ const UserProvider = ({ children }) => {
             setNotFound(null);
           } else {
             setDataCategory([]);
-            setNotFound(`${json.msgNoCategory}`);
+            setNotFound(`No se encontro el recurso solicitado`);
           }
           if (!res.ok) {
             throw { status: res.status, statusText: res.statusText };
@@ -105,7 +105,7 @@ const UserProvider = ({ children }) => {
             setNotFound(null);
           } else {
             setDetailProduct([]);
-            setNotFound(`${json.msgNoProduct}`);
+            setNotFound(`No se encontro el recurso solicitado`);
           }
           if (!res.ok) {
             throw { status: res.status, statusText: res.statusText };

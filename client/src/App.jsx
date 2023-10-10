@@ -21,8 +21,9 @@ function App() {
   return (
     <>
       {!isAuthEmployee && <Header navigate={navigate}/>}
-      {/* <Header /> */}
+
       <Routes>
+        {/* user */}
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -38,6 +39,8 @@ function App() {
         <Route path="/" element={<ProtectedAccount />}>
           <Route path="/my-shopping" element={<MyShopping />} />
         </Route>
+
+        {/* no se muestra por que existen rutas que tienen parametros creo saber que es por eso */}
         <Route path="*" element={<h1>NO EXISTE LA RUTA</h1>} />
 
       </Routes>
